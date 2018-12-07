@@ -1,24 +1,61 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, primary_key: true|
+|name|string|null: false, index: true, unique_key: true|
+|email|varchar(255)|null: false, unique_key: true|
+|password|varchar(255)|null: false|
+|created_at|datetime|null: false|
+|updated_at|datetime|null: false|
 
-Things you may want to cover:
+### Association
+- has_many :groups, through: :members
+- has_many :members
+- has_many :messages
 
-* Ruby version
+***
 
-* System dependencies
+## groupテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, primary_key: true|
+|name|string|null: false|
+|created_at|datetime|null: false|
+|updated_at|datetime|null: false|
 
-* Configuration
+### Association
+- has_many :users, through: :members
+- has_many :members
+- has_many :messages
 
-* Database creation
+***
 
-* Database initialization
+## memberテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, primary_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :group
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+***
 
-* Deployment instructions
+## messageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, primary_key: true|
+|body|text||
+|image|text||
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|created_at|datetime|null: false|
+|updated_at|datetime|null: false|
 
-* ...
+### Association
+- belongs_to :group
+- belongs_to :user
