@@ -4,7 +4,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key: true|
-|name|varchar(255)|null: false, index: true|
+|name|string|null: false, index: true, unique_key: true|
 |email|varchar(255)|null: false, unique_key: true|
 |password|varchar(255)|null: false|
 |created_at|datetime|null: false|
@@ -21,7 +21,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, primary_key: true|
-|name|varchar(255)|null: false|
+|name|string|null: false|
 |created_at|datetime|null: false|
 |updated_at|datetime|null: false|
 
@@ -50,7 +50,7 @@
 |------|----|-------|
 |id|integer|null: false, primary_key: true|
 |body|text||
-|image|string||
+|image|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 |created_at|datetime|null: false|
