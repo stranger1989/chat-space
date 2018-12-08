@@ -34,18 +34,7 @@
           = link_to "Edit",'#'
       .main-contents__chat-list
         %ul
-          %li
-            %article.main-contents__chat-list__text-box
-              %h4 test
-              %span 2018/12/08
-              %span 12:01:36
-              %p テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト
-          %li
-            %article.main-contents__chat-list__text-box
-              %h4 test
-              %span 2018/12/08
-              %span 12:01:36
-              %p テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト
+          = render partial: 'chat_article'
       %footer.main-contents__chat-form
         %form{:action => "/", :method => "post"}
           .main-contents__chat-form__message-box
