@@ -1,6 +1,8 @@
 .wrapper
+
   %header.header
-    #p チャットグループが作成されました。
+    %p チャットグループが作成されました。
+
   .contents
     .side-contents
       .side-contents__user-name
@@ -17,6 +19,7 @@
       .side-contents__group-list
         %ul
           = render partial: 'group_article'
+
     .main-contents
       .main-contents__group-name
         .main-contents__group-name__text-box
@@ -27,6 +30,7 @@
       .main-contents__chat-list
         %ul
           = render partial: 'chat_article'
+
       %footer.main-contents__chat-form
         %form{:action => "/", :method => "post"}
           .main-contents__chat-form__message-box
