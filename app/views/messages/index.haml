@@ -1,11 +1,22 @@
 .wrapper
-  #header.header
+  %header.header
     #p チャットグループが作成されました。
   .contents
     .side-contents
       .side-contents__user-name
+        .side-contents__user-name__text-box
+          %h1
+            testname
+          %ul
+            %li
+              = link_to '#' do
+                %i.fa.fa-cog
+            %li
+              = link_to '#' do
+                %i.fa.fa-edit
+
       .side-contents__group-list
     .main-contents
       .main-contents__group-name
       .main-contents__chat-list
-      #footer.main-contents__chat-form
+      %footer.main-contents__chat-form
