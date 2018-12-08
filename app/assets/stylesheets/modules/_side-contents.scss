@@ -1,11 +1,32 @@
 // 変数・関数定義読み込み
 @import "./config/variables";
 @import "./mixin/mixin";
-@import "font-awesome";
 
 .side-contents{
   width: $side-contents-width;
   height: 100vh;
   float:left;
-  background-color: $side-contents-width-background-color;
+  background-color: $side-contents-background-color;
+
+  &__user-name{
+    width:100%;
+    height:$side-contents-user-name-height;
+    background-color:$side-user_name-background-color;
+
+    &__text-box{
+      @include clearfix();
+      padding:0 20px;
+      color:$Basic-white;
+      line-height:$side-contents-user-name-height;
+      h1{
+        font-size: 16px;
+        font-weight: bold;
+        float:left;
+      }
+      li{
+        float:right;
+        padding-left:5px;
+      }
+    }
+  }
 }
