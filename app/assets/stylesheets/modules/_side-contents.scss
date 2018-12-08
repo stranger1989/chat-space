@@ -1,6 +1,7 @@
 // 変数・関数定義読み込み
 @import "./config/variables";
 @import "./mixin/mixin";
+@import "font-awesome";
 
 .side-contents{
   width: $side-contents-width;
