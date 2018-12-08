@@ -29,4 +29,22 @@
       }
     }
   }
+    &__group-list{
+      width:100%;
+      color:$Basic-white;
+      word-wrap: break-word;
+
+      h2{
+        font-size:15px;
+        margin-bottom:5px;
+      }
+      p{
+        font-size:11px;
+      }
+      li{
+        @include hoverbutton($side-contents-background-color);
+        padding:20px 20px 40px;
+        background-color: $side-contents-background-color;
+      }
+  }
 }

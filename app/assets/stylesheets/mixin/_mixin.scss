@@ -1,3 +1,4 @@
+// クリアフィックス処理
 @mixin clearfix() {
   &:after {
     content: '';
@@ -6,9 +7,10 @@
   }
 }
 
-@mixin hoverbutton-Opacity() {
+// ホバーさせた時の処理
+@mixin hoverbutton($color) {
   &:hover {
-    opacity: 0.8;
+    background-color: lighten($color, 8%);
     cursor:pointer;
   }
 }
