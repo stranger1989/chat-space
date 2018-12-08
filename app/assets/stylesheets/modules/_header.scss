@@ -1,0 +1,9 @@
+// 変数・関数定義読み込み
+@import "./config/variables";
+@import "./mixin/mixin";
+
+.header{
+  width: 100%;
+  height: $header-height;
+  background-color: $header-color;
+}

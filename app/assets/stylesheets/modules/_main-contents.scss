@@ -1,0 +1,19 @@
+// 変数・関数定義読み込み
+@import "./config/variables";
+@import "./mixin/mixin";
+
+.main-contents{
+  width:calc(100vw - #{$side-contents-width});
+  height: 100vh;
+  float:right;
+  position: relative;
+  background-color: $main-contents-width-background-color;
+  &__chat-form{
+    width:100%;
+    height:90px;
+    position:absolute;
+    bottom:0;
+    background-color: $chat-form-background-color;
+  }
+
+}
