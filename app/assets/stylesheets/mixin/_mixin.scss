@@ -5,3 +5,10 @@
     clear: both;
   }
 }
+
+@mixin hoverbutton-Opacity() {
+  &:hover {
+    opacity: 0.8;
+    cursor:pointer;
+  }
+}
