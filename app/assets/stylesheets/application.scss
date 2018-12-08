@@ -14,4 +14,27 @@
  *= require_self
  */
 
+// リセット
 @import "./reset";
+
+// モジュール分割
+@import "./modules/header";
+@import "./modules/side-contents";
+@import "./modules/main-contents";
+
+// 共通レイアウト
+*{
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+.wrapper{
+  min-width: 400px;
+}
+
+.contents{
+  width: 100%;
+}
