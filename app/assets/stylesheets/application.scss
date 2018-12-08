@@ -33,9 +33,10 @@
   box-sizing: border-box;
 }
 
-a{
-  text-decoration: none;
-}
+a:link { color:#ffffff; text-decoration:none }
+a:visited { color:#ffffff; text-decoration:none }
+a:hover { color:#ffffff; text-decoration:none }
+a:active { color:#ffffff; text-decoration:none }
 
 .wrapper{
   min-width: 400px;
