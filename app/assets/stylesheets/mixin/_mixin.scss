@@ -1,0 +1,16 @@
+// クリアフィックス処理
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+// ホバーさせた時の処理
+@mixin hoverbutton($color) {
+  &:hover {
+    background-color: lighten($color, 8%);
+    cursor:pointer;
+  }
+}

@@ -1,0 +1,41 @@
+.wrapper
+
+  %header.header
+    %p チャットグループが作成されました。
+
+  .contents
+    .side-contents
+      .side-contents__user-name
+        .side-contents__user-name__text-box
+          %h1
+            testname
+          %ul
+            %li
+              = link_to '#' do
+                %i.fa.fa-cog
+            %li
+              = link_to '#' do
+                %i.fa.fa-edit
+      .side-contents__group-list
+        %ul
+          = render partial: 'group_article'
+
+    .main-contents
+      .main-contents__group-name
+        .main-contents__group-name__text-box
+          %h3 testgroup
+          %p MEMBER: sample
+        .main-contents__group-name__edit-box
+          = link_to "Edit",'#'
+      .main-contents__chat-list
+        %ul
+          = render partial: 'chat_article'
+
+      %footer.main-contents__chat-form
+        %form{:action => "/", :method => "post"}
+          .main-contents__chat-form__message-box
+            %input{:name => "title",:placeholder => "type a message"}
+            %label{for: "upload-icon"}
+              %i.fa.fa-picture-o
+          %input.main-contents__chat-form__send-box{:type => "submit", :value => "Send"}
+

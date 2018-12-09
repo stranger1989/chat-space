@@ -1,0 +1,49 @@
+.side-contents{
+  width: $side-contents-width;
+  height: 100vh;
+  float:left;
+  background-color: $side-contents-background-color;
+
+  &__user-name{
+    width:100%;
+    height:$side-contents-user-name-height;
+    background-color:$side-user_name-background-color;
+
+    &__text-box{
+      @include clearfix();
+      padding:0 20px;
+      color:$Basic-white;
+      line-height:$side-contents-user-name-height;
+      h1{
+        font-size: 16px;
+        font-weight: bold;
+        float:left;
+      }
+      li{
+        float:right;
+        padding-left:5px;
+        a{
+          color:$Basic-white;
+        }
+      }
+    }
+  }
+    &__group-list{
+      width:100%;
+      color:$Basic-white;
+      word-wrap: break-word;
+
+      h2{
+        font-size:15px;
+        margin-bottom:5px;
+      }
+      p{
+        font-size:11px;
+      }
+      li{
+        @include hoverbutton($side-contents-background-color);
+        padding:20px 20px 40px;
+        background-color: $side-contents-background-color;
+      }
+  }
+}
