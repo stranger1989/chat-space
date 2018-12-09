@@ -9,6 +9,5 @@
   %body
   .wrapper
     %header.header
-      = flash.each do |key, value|
-        = content_tag(:p, value, class: "#{key}")
+      = render 'layouts/notifications'
     = yield
