@@ -1,14 +1,9 @@
-.wrapper
-
-  %header.header
-    %p チャットグループが作成されました。
-
   .contents
     .side-contents
       .side-contents__user-name
         .side-contents__user-name__text-box
           %h1
-            testname
+            = current_user.name
           %ul
             %li
               = link_to edit_user_path(current_user) do
