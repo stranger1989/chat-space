@@ -9,7 +9,7 @@
             = link_to edit_user_path(current_user) do
               %i.fa.fa-cog
           %li
-            = link_to '#' do
+            = link_to new_group_path do
               %i.fa.fa-edit
     .side-contents__group-list
       %ul
@@ -21,7 +21,7 @@
         %h3 testgroup
         %p MEMBER: sample
       .main-contents__group-name__edit-box
-        = link_to "Edit",'#'
+        = link_to "Edit",edit_group_path(current_user)
     .main-contents__chat-list
       %ul
         = render partial: 'chat_article'
