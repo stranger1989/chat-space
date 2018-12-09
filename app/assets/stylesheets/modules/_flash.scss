@@ -1,0 +1,11 @@
+.notification {
+  .notice {
+    background-color: $light_blue;
+    color: $Basic-white;
+  }
+
+  .alert {
+    background-color: $alert_orange;
+    color: $Basic-white;
+  }
+}

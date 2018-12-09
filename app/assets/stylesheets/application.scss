@@ -10,6 +10,8 @@
 
 // モジュール分割
 @import "./modules/common";
+@import "./modules/user";
+@import "./modules/flash";
 @import "./modules/header";
 @import "./modules/side-contents";
 @import "./modules/main-contents";
