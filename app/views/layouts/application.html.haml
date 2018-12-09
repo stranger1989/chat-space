@@ -9,5 +9,6 @@
   %body
   .wrapper
     %header.header
-      %p チャットグループが作成されました。
+      = flash.each do |key, value|
+        = content_tag(:p, value, class: "#{key}")
     = yield
