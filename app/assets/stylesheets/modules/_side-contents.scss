@@ -1,7 +1,3 @@
-// 変数・関数定義読み込み
-@import "./config/variables";
-@import "./mixin/mixin";
-
 .side-contents{
   width: $side-contents-width;
   height: 100vh;
