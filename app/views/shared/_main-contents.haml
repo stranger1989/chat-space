@@ -1,0 +1,18 @@
+.main-contents
+  .main-contents__group-name
+    .main-contents__group-name__text-box
+      %h3 testgroup
+      %p MEMBER: sample
+    .main-contents__group-name__edit-box
+      = link_to "Edit",edit_group_path(current_user)
+  .main-contents__chat-list
+    %ul
+      = render partial: 'shared/chat_article'
+
+  %footer.main-contents__chat-form
+    %form{:action => "/", :method => "post"}
+      .main-contents__chat-form__message-box
+        %input{:name => "title",:placeholder => "type a message"}
+        %label{for: "upload-icon"}
+          %i.fa.fa-picture-o
+      %input.main-contents__chat-form__send-box{:type => "submit", :value => "Send"}
