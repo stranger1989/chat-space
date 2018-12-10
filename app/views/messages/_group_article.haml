@@ -1,12 +1,6 @@
-%li
-  %article.side-contents__group-list__text-box
-    %h2 aaaaaaaa
-    %p まだメッセージはありません。
-%li
-  %article.side-contents__group-list__text-box
-    %h2 aaaaaaaa
-    %p まだメッセージはありません。
-%li
-  %article.side-contents__group-list__text-box
-    %h2 aaaaaaaa
-    %p まだメッセージはありません。
+
+- @group.each do |group|
+  %li
+    %article.side-contents__group-list__text-box
+      %h2= group.name
+      %p まだメッセージはありません。
