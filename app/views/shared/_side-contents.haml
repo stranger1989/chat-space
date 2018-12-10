@@ -1,0 +1,16 @@
+.side-contents
+  .side-contents__user-name
+    .side-contents__user-name__text-box
+      %h1
+        = current_user.name
+      %ul
+        %li
+          = link_to edit_user_path(current_user) do
+            %i.fa.fa-cog
+        %li
+          = link_to new_group_path do
+            %i.fa.fa-edit
+
+  .side-contents__group-list
+    %ul
+      = render partial: 'shared/group_article'
