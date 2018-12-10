@@ -1,6 +1,6 @@
 
 - @group.each do |group|
-  %li
-    %article.side-contents__group-list__text-box
+  %li.side-contents__group-list__text-box
+    = link_to group_messages_path(group.id) do
       %h2= group.name
       %p まだメッセージはありません。

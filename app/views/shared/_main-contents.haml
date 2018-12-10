@@ -1,10 +1,13 @@
 .main-contents
   .main-contents__group-name
     .main-contents__group-name__text-box
-      %h3 testgroup
-      %p MEMBER: sample
+      %h3=@groop_now.name
+      %p
+        MEMBER:
+        -@groop_now.users.each do |member|
+          =member.name
     .main-contents__group-name__edit-box
-      = link_to "Edit",edit_group_path(current_user)
+      = link_to "Edit",edit_group_path(params[:group_id])
   .main-contents__chat-list
     %ul
       = render partial: 'shared/chat_article'
