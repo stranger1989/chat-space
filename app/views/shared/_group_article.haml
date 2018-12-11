@@ -3,4 +3,4 @@
   %li.side-contents__group-list__text-box
     = link_to group_messages_path(group.id) do
       %h2= group.name
-      %p まだメッセージはありません。
+      %p= group.show_last_message

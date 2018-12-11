@@ -1,12 +1,8 @@
-%li
-  %article.main-contents__chat-list__text-box
-    %h4 test
-    %span 2018/12/08
-    %span 12:01:36
-    %p テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト
-%li
-  %article.main-contents__chat-list__text-box
-    %h4 test
-    %span 2018/12/08
-    %span 12:01:36
-    %p テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト、テスト
+- @group_message.each do |message|
+  %li
+    %article.main-contents__chat-list__text-box
+      %h4=message.user.name
+      %span=message.created_at.strftime('%Y年%m月%d日')
+      %span=message.created_at.strftime('%H:%M:%S')
+      %p=message.body
+      =image_tag(message.image)

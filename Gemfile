@@ -73,3 +73,5 @@ gem 'font-awesome-rails'
 gem 'font-awesome-sass'
 gem 'pry-rails'
 
+gem 'mini_magick'
+gem 'carrierwave'
