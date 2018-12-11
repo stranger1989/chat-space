@@ -1,6 +1,8 @@
 .side-contents{
   width: $side-contents-width;
-  height: 100vh;
+  padding-bottom: 10000px;
+  margin-bottom: -10000px;
+  overflow: hidden;
   float:left;
   background-color: $side-contents-background-color;
 

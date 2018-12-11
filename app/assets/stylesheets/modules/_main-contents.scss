@@ -1,6 +1,7 @@
 .main-contents{
   width:calc(100vw - #{$side-contents-width});
   height: 100vh;
+  padding-bottom:90px;
   float:right;
   position: relative;
   background-color: $main-contents-width-background-color;
@@ -8,7 +9,6 @@
   &__group-name{
     height:$side-contents-user-name-height;
     border-bottom: solid 1px #eeeeee;
-
     &__text-box{
       padding:35px 40px 0;
       float:left;
@@ -40,6 +40,9 @@
 
   &__chat-list{
     width:100%;
+    height:calc(100vh - #{$side-contents-user-name-height} - #{$header-height});
+    overflow:scroll;
+    padding-bottom:90px;
     &__text-box{
       padding:46px 40px 40px;
       h4{
@@ -74,17 +77,26 @@
       height:100%;
       float:left;
       position:relative;
-      input{
+      textarea{
+        appearance: none;
         width:100%;
         height:50px;
         padding:0 10px;
+        border:none;
         font-size:16px;
+        line-height:50px;
         color:$Article-black;
       }
       label{
         position:absolute;
         right:10px;
         top:12px;
+      }
+      .file_upload{
+        cursor:pointer;
+      }
+      #upload-icon{
+        display:none;
       }
     }
 
@@ -94,6 +106,7 @@
       float:right;
       background-color: $header-color;
       border-style: none;
+      font-size:16px;
       color:$Basic-white;
       cursor: pointer;
     }
