@@ -57,6 +57,7 @@ gem 'devise'
 group :development do
      gem 'rspec'
      gem 'web-console', '>= 3.3.0'
+     gem 'faker'
 end
 
 group :test do
