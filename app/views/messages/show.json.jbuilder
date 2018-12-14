@@ -1,1 +1,1 @@
-json.content @message.content
+json.body @message.body
