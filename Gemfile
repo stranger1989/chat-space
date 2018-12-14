@@ -56,10 +56,13 @@ gem 'devise'
 
 group :development do
      gem 'rspec'
+     gem 'web-console', '>= 3.3.0'
+     gem 'faker'
 end
 
 group :test do
      gem 'rspec'
+     gem 'faker'
 end
 
 group :production do
@@ -75,3 +78,6 @@ gem 'pry-rails'
 
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'rspec-rails'
+gem 'factory_girl_rails', "~> 4.4.1"
+gem 'rails-controller-testing'
