@@ -1,14 +1,13 @@
 $(function() {
   function buildHTML(message){
-    var html = `<li>
-                <article class='main-contents__chat-list__text-box'>
+    var image_tag = `<img src= "${ message.image['url'] }" />`
+    var html = `<div class='main-contents__chat-list__text-box'>
                 <h4>${ message.name }</h4>
-                <span> ${ message.time.match(/(\d+)-(\d+)-(\d+)/)[0].replace(/(\d+)-(\d+)-(\d+)/g, "$1年$2月$3日") } </span>
-                <span>${ message.time.match(/(\d+):(\d+):(\d+)/)[0] }</span>
+                <div class="post_time"> ${ message.date } </div>
+                <div class="post_time">${ message.time }</div>
                 <p>${ message.body }</p>
-                <img src= "${ message.image['url'] }" />
-                </article>
-                </li>`
+                ${ message.image['url'] ? image_tag : "<img />" }
+                </div>`
     return html;
   }
 
@@ -16,8 +15,7 @@ $(function() {
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    $(this).find("textarea, :text, select").val("").end().find(":checked").prop("checked", false);
-    console.log($(this).find("input[name=file]"));
+    $(this).find("textarea").val("");
     $(this).find("input[type=file]").replaceWith($(this).find("input[type=file]").val('').clone(true));
 
     $.ajax({
