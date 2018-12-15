@@ -52,7 +52,8 @@
         font-weight: bold;
         color:$Article-black;
       }
-      span{
+      .post_time{
+        display:inline-block;
         font-size:12px;
         color:$Basic-gray;
       }
