@@ -3,6 +3,11 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
+    @messages = @group_now.messages.order("created_at").includes(:user)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
