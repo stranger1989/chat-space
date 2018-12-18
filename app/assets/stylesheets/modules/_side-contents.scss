@@ -1,10 +1,9 @@
 .side-contents{
   width: $side-contents-width;
-  padding-bottom: 10000px;
-  margin-bottom: -10000px;
-  overflow: hidden;
+  height: 100vh;
   float:left;
   background-color: $side-contents-background-color;
+  overflow: scroll;
 
   &__user-name{
     width:100%;

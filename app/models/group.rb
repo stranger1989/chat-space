@@ -4,7 +4,6 @@ class Group < ApplicationRecord
   has_many :messages
 
   validates :name, presence: true
-  # validates :user_ids, presence: true
 
   def show_last_message
     if (last_message = messages.last).present?
