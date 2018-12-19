@@ -9,8 +9,7 @@
     .main-contents__group-name__edit-box
       = link_to "Edit",edit_group_path(params[:group_id])
   .main-contents__chat-list
-    %ul
-      = render partial: 'shared/chat_article'
+    = render partial: 'shared/chat_article'
 
   %footer.main-contents__chat-form
     = form_for [@group_now, @message] do |f|
