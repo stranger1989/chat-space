@@ -1,7 +1,7 @@
 $(function() {
   function buildHTML(message){
     var image_tag = `<img src= "${ message.image['url'] }" />`
-    var html = `<div class='main-contents__chat-list__text-box chat data-id=${message.id}'>
+    var html = `<div class='main-contents__chat-list__text-box chat' data-id=${message.id}>
                 <h4>${ message.name }</h4>
                 <div class="post_time"> ${ message.date } </div>
                 <div class="post_time">${ message.time }</div>
@@ -26,36 +26,40 @@ $(function() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.main-contents__chat-list ul').append(html)
+      $('.main-contents__chat-list').append(html)
       $('.main-contents__chat-list').animate({scrollTop: $('.main-contents__chat-list').get(0).scrollHeight}, 500);
     })
     .fail(function(){
       alert('送信に失敗しました');
     })
   })
-    var interval = setInterval(function() {
-      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+
+  $(function(){
+    setInterval(update, 5000);
+  });
+
+  function update(){
+    var message_id = $(".main-contents__chat-list .chat:last").data('id');
     $.ajax({
-      url: location.href.json,
-      dataType:'json',
-      processData: false,
-      contentType: false
+      url: location.href,
+      type: 'GET',
+      data: {
+        message: { id: message_id }
+      },
+      dataType: 'json'
     })
-    .done(function(json) {
-      var id = $(".main-contents__chat-list ul .chat:last").data('id');
-      var insertHTML = '';
-      json.messages.forEach(function(message) {
-        if (message.id > id ) {
-          insertHTML += buildHTML(message);
-          $('.main-contents__chat-list').animate({scrollTop: $('.main-contents__chat-list').get(0).scrollHeight}, 500);
-        }
+    .always(function(json){
+      $.each(json.messages, function(i, data){
+        var html = buildHTML(data);
+      $('.main-contents__chat-list').append(html)
+      $('.main-contents__chat-list').animate({scrollTop: $('.main-contents__chat-list').get(0).scrollHeight}, 500);
       });
-      $('.main-contents__chat-list ul').append(insertHTML);
-    })
-    .fail(function(json) {
-      alert('自動更新に失敗しました');
     });
-  } else {
-    clearInterval(interval);
-   }} , 5 * 1000 );
+    if($('.main-contents__chat-list .chat')[0]){
+      var message_id = $('.main-contents__chat-list .chat').data('id');
+    } else {
+      var message_id = 0
+    }
+  }
+
 });
