@@ -1,7 +1,7 @@
 $(function() {
   function buildHTML(message){
     var image_tag = `<img src= "${ message.image['url'] }" />`
-    var html = `<div class='main-contents__chat-list__text-box chat' data-id=${message.id}>
+    var html = `<div class='main-contents__chat-list__text-box chat' data-id=${message.id} data-group_id=${message.group_id}>
                 <h4>${ message.name }</h4>
                 <div class="post_time"> ${ message.date } </div>
                 <div class="post_time">${ message.time }</div>
@@ -40,11 +40,12 @@ $(function() {
 
   function update(){
     var message_id = $(".main-contents__chat-list .chat:last").data('id');
+    var message_group_id = $(".main-contents__chat-list .chat:last").data('group_id');
     $.ajax({
       url: location.href,
       type: 'GET',
       data: {
-        message: { id: message_id }
+        message: { id: message_id , group_id: message_group_id}
       },
       dataType: 'json'
     })
@@ -61,5 +62,4 @@ $(function() {
       var message_id = 0
     }
   }
-
 });

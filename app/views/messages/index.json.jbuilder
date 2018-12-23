@@ -6,5 +6,6 @@ if @new_message.present?
     json.body     message.body
     json.image    message.image
     json.id       message.id
+    json.group_id message.group.id
   end
 end
