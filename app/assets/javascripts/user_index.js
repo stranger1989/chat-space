@@ -1,4 +1,4 @@
-$(function() {
+$(function(){
   var search_list = $("#user-search-result");
   var member_list = $("#user-member-list");
   var user_list = new Array();
@@ -45,8 +45,9 @@ $(function() {
       $(this).parent().remove();
       appendUser(user)
       user_list.some(function(v, i){
-        if (v == user) user_list.splice(i,1);
+        if (v["id"] == user["id"]) user_list.splice(i,1);
       });
+      click_add_buttion();
     });
   }
   function contents_sort(sort_list){
@@ -73,7 +74,6 @@ $(function() {
     }
     return my_result;
   }
-
   $(".chat-group-form__input").on("keyup", function() {
     var input = $("#user-search-field").val();
     $.ajax({
