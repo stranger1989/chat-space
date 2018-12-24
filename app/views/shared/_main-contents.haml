@@ -16,7 +16,7 @@
       .main-contents__chat-form__message-box
         = f.text_area :body, placeholder: "type a message"
         = f.label :image, class: "file_upload",for: "upload-icon" do
-          %i.fa.fa-picture-o
+          %i.far.fa-image
         = f.file_field :image, id: "upload-icon"
         = f.hidden_field :image_cache
       = button_tag "Send", type: "submit", class: "main-contents__chat-form__send-box", value: "Send"
