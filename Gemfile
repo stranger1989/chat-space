@@ -66,6 +66,7 @@ group :development do
      gem 'capistrano-bundler'
      gem 'capistrano-rails'
      gem 'capistrano3-unicorn'
+     gem 'spring'
 end
 
 group :test do
@@ -94,3 +95,4 @@ gem 'pry-rails'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'jquery-turbolinks'
+gem 'fog-aws'
