@@ -14,7 +14,7 @@ CarrierWave.configure do |config|
     endpoint: 'https://s3.example.com:8080'
   }
 
-  config.fog_directory  = 'update-image'
+  config.fog_directory  = 'image-load'
   config.fog_public     = false
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/update-image'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/image-load'
 end
